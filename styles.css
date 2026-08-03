@@ -1,0 +1,191 @@
+:root {
+  color-scheme: dark;
+  --bg: #040816;
+  --panel: rgba(12, 24, 48, 0.9);
+  --panel-strong: rgba(20, 35, 70, 0.95);
+  --text: #f4f7ff;
+  --muted: #9db4d8;
+  --accent: #6ee7f9;
+  --accent-2: #9d7bff;
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --danger: #fb7185;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top, #132347 0%, var(--bg) 45%, #02050e 100%);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.85) 1px, transparent 1px);
+  background-size: 34px 34px;
+  opacity: 0.25;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.95), transparent);
+}
+
+.app-shell {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+
+.hero-card,
+.agent-card {
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(2, 8, 23, 0.35);
+  backdrop-filter: blur(16px);
+}
+
+.hero-card {
+  padding: 28px;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.26em;
+  font-size: 0.76rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: clamp(1.8rem, 2.8vw, 2.7rem);
+}
+
+.hero-text {
+  margin: 0 0 22px;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 700px;
+}
+
+.mission-form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.mission-form input {
+  flex: 1;
+  min-width: 260px;
+  padding: 14px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.08);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.mission-form input::placeholder {
+  color: #aebdd6;
+}
+
+.mission-form button {
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 22px;
+  font-weight: 600;
+  color: #07111f;
+  background: linear-gradient(135deg, var(--accent), #a78bfa);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mission-form button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(109, 140, 255, 0.25);
+}
+
+.agent-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.agent-card {
+  padding: 20px;
+  min-height: 230px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.status-pill {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  background: rgba(255,255,255,0.1);
+  color: var(--muted);
+}
+
+.status-pill.loading {
+  background: rgba(250, 204, 21, 0.2);
+  color: var(--warning);
+}
+
+.status-pill.success {
+  background: rgba(74, 222, 128, 0.2);
+  color: var(--success);
+}
+
+.status-pill.error {
+  background: rgba(251, 113, 133, 0.2);
+  color: var(--danger);
+}
+
+.agent-card h3 {
+  margin: 12px 0 10px;
+  color: var(--accent);
+}
+
+.card-body {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--text);
+  white-space: pre-wrap;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 850px) {
+  .agent-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🚀 Space Mission Planner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="stars"></div>
+    <main class="app-shell">
+      <section class="hero-card">
+        <p class="eyebrow">Mission Control</p>
+        <h1>🚀 Space Mission Planner</h1>
+        <p class="hero-text">
+          Ask a space question and watch three AI agents work together to research,
+          plan, and report like a real mission team.
+        </p>
+
+        <form id="mission-form" class="mission-form">
+          <label for="question" class="sr-only">Space question</label>
+          <input
+            id="question"
+            name="question"
+            type="text"
+            placeholder="Example: What is Mars made of?"
+            required
+          />
+          <button type="submit">Launch Mission</button>
+        </form>
+      </section>
+
+      <section class="agent-grid" aria-label="Agent workflow">
+        <article class="agent-card" id="agent-1-card">
+          <div class="card-header">
+            <h2>Agent 1</h2>
+            <span class="status-pill" id="status-1">Waiting</span>
+          </div>
+          <h3>🧑‍🔬 Space Researcher</h3>
+          <p class="card-body" id="body-1">
+            Ready to verify the question and collect space facts.
+          </p>
+        </article>
+
+        <article class="agent-card" id="agent-2-card">
+          <div class="card-header">
+            <h2>Agent 2</h2>
+            <span class="status-pill" id="status-2">Waiting</span>
+          </div>
+          <h3>🛰️ Mission Planner</h3>
+          <p class="card-body" id="body-2">
+            Waiting for Agent 1 research to build the mission steps.
+          </p>
+        </article>
+
+        <article class="agent-card" id="agent-3-card">
+          <div class="card-header">
+            <h2>Agent 3</h2>
+            <span class="status-pill" id="status-3">Waiting</span>
+          </div>
+          <h3>👩‍🚀 Mission Commander</h3>
+          <p class="card-body" id="body-3">
+            Waiting for the full mission summary and fun fact.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
